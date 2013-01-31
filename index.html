@@ -1,14 +1,11 @@
 <! DOCTYPE html >
-
+<html>
 <head>
 <title>Challenge Forms</title>    
 <link type="text/css" rel="stylesheet" href="main.css"/>
 <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>   
 </head>
-
-
-
-<body>
+    <body>
     
         <form>
                 <header>
@@ -22,12 +19,12 @@
                     <ul class="firstBox">
                         <li>
                             <label for="portfolio tile">Portfolio title</label>
-                            <input class="Reg" type="text" title="Enter a porfolio title" required=""/>
+                            <input class="Reg" type="text" title="Enter a porfolio title" aria-required="true" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/>
                          </li> 
                         <li>    
                             <label for="portfolio address">Portfolio address</label>
                             <div class="sample">.sample.com</div>
-                            <input class="PortAdd" type="text" title="Enter a porfolio address" required=""/>
+                            <input class="PortAdd" type="text" title="Enter a porfolio address" aria-required="true" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/>
                         </li>
                     </ul>    
                 </fieldset> 
@@ -38,16 +35,16 @@
                     <ul>    
                         <li>
                             <label for="name">Name</label>
-                            <input class="Reg" type="text" title="Enter your name" required=""/>
+                            <input class="Reg" type="text" title="Enter your name" aria-required="true" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/>
                         </li> 
                         <li>    
                             <label for="email">Email</label>
-                            <input class="Reg" type="text" title="Enter your email" required=""/>
+                            <input class="Reg" type="email" title="Enter your email" aria-required="true" required/>
                             <h3 class="notes">NOTE: We'll never share your email, promise.</h3>
                         </li> 
                         <li>
                             <label for="password">Password</label>
-                            <input class="Reg" type="password" title="Create a password" required=""/>
+                            <input class="Reg" type="password" title="Create a password: min 6 characters" aria-required="true" required pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
                         </li>
                     </ul>
                     
@@ -60,41 +57,37 @@
                         
                         <ul>
                         <li>
-                            <h4> <!-- <a href="https://www.paypal.com/home"> --> Use PayPal <!--</a>--> </h4>
+                            <h4><a href="https://www.paypal.com/home">Use PayPal</a></h4>
                         </li>
                         <li>    
                             <label for="card number">Card number</label>
-                            <input class="cardNum" type="text" title="Enter credit card number" pattern="[0-9]{13,16}" required=""/>
+                            <input id="cardNum" type="text" title="Enter credit card number" aria-required="true" pattern="[0-9]{13,16}" required/>
                             
                             <fieldset class="radio">
                                 <legend for="credit-card">Choose a credit card type</legend>
                                 <ul>
                                     <li>
                                         <input type="radio" name="credit-card" id="amex">
-                                        <label title="American Express" for="amex">
-                                        </label>
+                                        <label title="American Express" for="amex"></label>
                                     </li>
                                     <li>
                                         <input type="radio" name="credit-card" id="visa">
-                                        <label title="Visa" for="visa">
-                                        </label>
+                                        <label title="Visa" for="visa"></label>
                                     </li>
                                     <li>
                                          <input type="radio" name="credit-card" id="discover">
-                                        <label title="Discover" for="discover">
-                                        </label>
+                                        <label title="Discover" for="discover"></label>
                                     </li>
                                     <li>
                                         <input type="radio" name="credit-card" id="mastercard">
-                                        <label title="Mastercard" for="mastercard">
-                                        </label>
+                                        <label title="Mastercard" for="mastercard"></label>
                                     </li>
                                 </ul>
                             </fieldset>
                         </li> 
                         <li>    
                             <label for="security code">Security code</label>
-                            <input class="sec" title="Enter security code" type="text" required=""/>
+                            <input class="sec" title="Enter security code" type="text" aria-required="true" pattern="[0-9]{3,4}" required/>
                         </li> 
                             <li>
                                 <div class="codePic"></div>
@@ -102,7 +95,7 @@
                             <li> 
                                 <fieldset>    
                                     <label>Expiration date</label>
-                                        <select name="month" required="">
+                                        <select name="month" required>
                                             <option disabled="disabled" selected="">Month</option>
                                             <option value="january">January</option>
                                             <option value="february">February</option>
@@ -117,7 +110,7 @@
                                             <option value="november">November</option>
                                             <option value="december">December</option>
                                         </select>
-                                        <select name="year" required="">
+                                        <select name="year" required>
                                             <option disabled="disabled" selected="">Year</option>
                                             <option value="2013">2013</option>
                                             <option value="2014">2014</option>
@@ -142,4 +135,10 @@
             </ol>
                     <button type="submit">Create your portfolio</button>
         </form> 
-</body>
+        <script src="lib/modernizr.js"></script>
+        <script src="lib/jquery.js"></script>
+        <script src="lib/jquery.validate.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
