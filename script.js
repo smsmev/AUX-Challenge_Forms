@@ -7,21 +7,21 @@
     
     //check card type  
     if (/^5[1-5]/.test(accountNumber)) {
-      document.getElementById("mastercard").setAttribute("checked");
+      document.getElementById("mastercard").checked=true;
     }
 
     else if (/^4/.test(accountNumber)) {
-      document.getElementById("visa").setAttribute("checked");
+      document.getElementById("visa").checked=true;
     }
 
     else if (/^3[47]/.test(accountNumber)) {
 
-      document.getElementById("amex").setAttribute("checked");
+      document.getElementById("amex").checked=true;
     }
 
      else if (/^6/.test(accountNumber)) {
 
-      document.getElementById("discover").setAttribute("checked");
+      document.getElementById("discover").checked=true;
     }
     
     //Reset to unchecked

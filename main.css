@@ -431,3 +431,20 @@ a[href="https://www.paypal.com/home"] {
     bottom:54px;
     text-decoration: none;
 }
+
+/*---------Parsley---Validation---Error---------*/
+input.parsley-error, textarea.parsley-error, .sample + .parsley-error{
+    color: #B94A48 !important;
+    background-color: #F2DEDE !important;
+    border: 1px solid #f29999 !important;
+    -moz-box-shadow:0px 2px 5px 0px #f19d9d;
+    -webkit-box-shadow:0px 2px 5px 0px #f19d9d;
+    box-shadow:0px 2px 5px 0px #f19d9d;
+    font-size:12px;
+}
+
+.required, .type {
+    font-size:12px;
+    color: #B94A48 !important;
+    margin-left:20px;
+}
